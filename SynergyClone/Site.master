@@ -1,0 +1,28 @@
+<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="SynergyClone.Site" %>
+<!DOCTYPE html>
+<html>
+<head runat="server">
+    <title>Synergy SIS Clone</title>
+    <link rel="stylesheet" type="text/css" href="~/Content/bootstrap/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="~/Content/synergy.css" />
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div class="container-fluid">
+            <nav>
+                <ul class="nav">
+                    <% if (Context.User?.Identity.IsAuthenticated == true) { %>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/Home/Default.aspx">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/Admin/Default.aspx">Admin Dashboard</a>
+                        </li>
+                    <% } %>
+                </ul>
+            </nav>
+            <asp:ContentPlaceHolder ID="MainContent" runat="server" />
+        </div>
+    </form>
+</body>
+</html>

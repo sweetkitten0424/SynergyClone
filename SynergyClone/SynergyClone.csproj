@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v17.0\WebApplications\Microsoft.WebApplication.targets" Condition="Exists('$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v17.0\WebApplications\Microsoft.WebApplication.targets')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>10.0.0</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{C5A9A3F0-1D1E-4C4A-8E18-9C6D6A8A6D1C}</ProjectGuid>
+    <RootNamespace>SynergyClone</RootNamespace>
+    <AssemblyName>SynergyClone</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <WebProjectProperties>
+      <UseIISExpress>true</UseIISExpress>
+      <AutoAssignPort>true</AutoAssignPort>
+      <DevelopmentServerPort>0</DevelopmentServerPort>
+      <IISUrl>http://localhost:48899/</IISUrl>
+      <UseIIS>false</UseIIS>
+      <NTLMAuthentication>false</NTLMAuthentication>
+      <UseCustomServer>false</UseCustomServer>
+      <CustomServerUrl></CustomServerUrl>
+      <SaveServerSettingsInUserFile>false</SaveServerSettingsInUserFile>
+    </WebProjectProperties>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Web.config" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\synergy.css" />
+    <Content Include="Content\bootstrap\bootstrap.min.css" />
+    <Content Include="Scripts\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Site.master.cs">
+      <DependentUpon>Site.master</DependentUpon>
+    </Compile>
+    <Compile Include="Site.master.designer.cs">
+      <DependentUpon>Site.master</DependentUpon>
+    </Compile>
+    <Compile Include="Data\SynergyContext.cs" />
+    <Compile Include="Models\AttendanceRecord.cs" />
+    <Compile Include="Models\AttendanceStatus.cs" />
+    <Compile Include="Models\Course.cs" />
+    <Compile Include="Models\Enrollment.cs" />
+    <Compile Include="Models\Grade.cs" />
+    <Compile Include="Models\Student.cs" />
+    <Compile Include="Models\User.cs" />
+    <Compile Include="Models\UserRole.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Admin\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <!-- other pages omitted for brevity -->
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion>17.0</VisualStudioVersion>
+    <VSToolsPath>$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\WebApplications\</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+</Project>

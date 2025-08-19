@@ -1,0 +1,18 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.6.32824.248
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{349C5851-65DF-11DA-9384-00065B846F21}") = "SynergyClone", "SynergyClone\SynergyClone.csproj", "{C5A9A3F0-1D1E-4C4A-8E18-9C6D6A8A6D1C}"
+EndProject
+Global
+    GlobalSection(SolutionConfigurationPlatforms) = preSolution
+        Debug|Any CPU = Debug|Any CPU
+        Release|Any CPU = Release|Any CPU
+    EndGlobalSection
+    GlobalSection(ProjectConfigurationPlatforms) = postSolution
+        {C5A9A3F0-1D1E-4C4A-8E18-9C6D6A8A6D1C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+        {C5A9A3F0-1D1E-4C4A-8E18-9C6D6A8A6D1C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+        {C5A9A3F0-1D1E-4C4A-8E18-9C6D6A8A6D1C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+        {C5A9A3F0-1D1E-4C4A-8E18-9C6D6A8A6D1C}.Release|Any CPU.Build.0 = Release|Any CPU
+    EndGlobalSection
+EndGlobal
