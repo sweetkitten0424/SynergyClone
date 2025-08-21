@@ -8,8 +8,5 @@ namespace SynergyClone
 {
     public partial class PXP2_Login
     {
-        protected global::System.Web.UI.WebControls.TextBox username;
-        protected global::System.Web.UI.WebControls.TextBox password;
-        protected global::System.Web.UI.WebControls.Button btnLogin;
     }
 }

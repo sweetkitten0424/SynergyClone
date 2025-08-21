@@ -13,15 +13,17 @@ namespace SynergyClone
             if (!IsPostBack) return;
             string user = Request.Form["username"], pass = Request.Form["password"];
             if (string.IsNullOrEmpty(user) || string.IsNullOrEmpty(pass)) return;
-            using var db = new SynergyContext();
-            var hash = SimpleHash(pass);
-            var u = db.Users.FirstOrDefault(x => x.Username==user && x.PasswordHash==hash && x.Role==UserRole.Staff);
-            if (u!=null)
+            using (var db = new SynergyContext())
             {
-                FormsAuthentication.SetAuthCookie(u.Username, false);
-                Response.Redirect("~/Home/Default.aspx");
+                var hash = SimpleHash(pass);
+                var u = db.Users.FirstOrDefault(x => x.Username==user && x.PasswordHash==hash && x.Role==UserRole.Staff);
+                if (u!=null)
+                {
+                    FormsAuthentication.SetAuthCookie(u.Username, false);
+                    Response.Redirect("~/Home/Default.aspx");
+                }
+                else Response.Write("<div style='color:red'>Invalid username or password</div>");
             }
-            else Response.Write("<div style='color:red'>Invalid username or password</div>");
         }
 
         static string SimpleHash(string input)

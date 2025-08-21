@@ -5,31 +5,46 @@ namespace SynergyClone.Data
 {
     public class SynergyContext : DbContext
     {
-        public SynergyContext() : base("SynergyDb") { }
+        public SynergyContext() : base("name=SynergyConnection")
+        {
+        }
 
         public DbSet<User> Users { get; set; }
         public DbSet<Student> Students { get; set; }
         public DbSet<Course> Courses { get; set; }
-        public DbSet<Enrollment> Enrollments { get; set; }
-        public DbSet<AttendanceRecord> AttendanceRecords { get; set; }
         public DbSet<Grade> Grades { get; set; }
+        public DbSet<Assignment> Assignments { get; set; }
+        public DbSet<Attendance> Attendance { get; set; }
+        public DbSet<DisciplineRecord> DisciplineRecords { get; set; }
+        public DbSet<HealthRecord> HealthRecords { get; set; }
+        public DbSet<TestScore> TestScores { get; set; }
+        public DbSet<Message> Messages { get; set; }
+        public DbSet<CalendarEvent> CalendarEvents { get; set; }
+        public DbSet<Incident> Incidents { get; set; }
+        public DbSet<Announcement> Announcements { get; set; }
+        public DbSet<Report> Reports { get; set; }
+        public DbSet<Enrollment> Enrollments { get; set; }
+        public DbSet<Schedule> Schedules { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
+            // Configure many-to-many relationship between Student and Course
             modelBuilder.Entity<Student>()
-                .HasMany(s => s.Enrollments)
-                .WithRequired(e => e.Student)
-                .HasForeignKey(e => e.StudentId);
+                .HasMany(s => s.Courses)
+                .WithMany(c => c.Students)
+                .Map(m =>
+                {
+                    m.ToTable("StudentCourses");
+                    m.MapLeftKey("StudentId");
+                    m.MapRightKey("CourseId");
+                });
 
+            // Configure Teacher relationship
             modelBuilder.Entity<Course>()
-                .HasMany(c => c.Enrollments)
-                .WithRequired(e => e.Course)
-                .HasForeignKey(e => e.CourseId);
-
-            modelBuilder.Entity<Enrollment>()
-                .HasMany(e => e.Grades)
-                .WithRequired(g => g.Enrollment)
-                .HasForeignKey(g => g.EnrollmentId);
+                .HasRequired(c => c.Teacher)
+                .WithMany()
+                .HasForeignKey(c => c.TeacherId)
+                .WillCascadeOnDelete(false);
 
             base.OnModelCreating(modelBuilder);
         }

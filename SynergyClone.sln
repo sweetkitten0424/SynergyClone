@@ -1,18 +1,21 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.6.32824.248
+VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{349C5851-65DF-11DA-9384-00065B846F21}") = "SynergyClone", "SynergyClone\SynergyClone.csproj", "{C5A9A3F0-1D1E-4C4A-8E18-9C6D6A8A6D1C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SynergyClone", "SynergyClone\SynergyClone.csproj", "{A7E82E89-B389-4742-A867-5C5EE6ABCDEF}"
 EndProject
 Global
-    GlobalSection(SolutionConfigurationPlatforms) = preSolution
-        Debug|Any CPU = Debug|Any CPU
-        Release|Any CPU = Release|Any CPU
-    EndGlobalSection
-    GlobalSection(ProjectConfigurationPlatforms) = postSolution
-        {C5A9A3F0-1D1E-4C4A-8E18-9C6D6A8A6D1C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-        {C5A9A3F0-1D1E-4C4A-8E18-9C6D6A8A6D1C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-        {C5A9A3F0-1D1E-4C4A-8E18-9C6D6A8A6D1C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-        {C5A9A3F0-1D1E-4C4A-8E18-9C6D6A8A6D1C}.Release|Any CPU.Build.0 = Release|Any CPU
-    EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A7E82E89-B389-4742-A867-5C5EE6ABCDEF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A7E82E89-B389-4742-A867-5C5EE6ABCDEF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A7E82E89-B389-4742-A867-5C5EE6ABCDEF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A7E82E89-B389-4742-A867-5C5EE6ABCDEF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
 EndGlobal

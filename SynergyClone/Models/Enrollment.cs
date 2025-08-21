@@ -9,15 +9,10 @@ namespace SynergyClone.Models
     {
         public int Id { get; set; }
         public int StudentId { get; set; }
+        public virtual Student Student { get; set; }
         public int CourseId { get; set; }
-
-        [Required]
-        public DateTime EnrollDate { get; set; }
-
-        public string Grade { get; set; }
-
-        [ForeignKey("StudentId")] public virtual Student Student { get; set; }
-        [ForeignKey("CourseId")]  public virtual Course  Course  { get; set; }
-        public virtual ICollection<Grade> Grades { get; set; }
+        public virtual Course Course { get; set; }
+        public DateTime EnrollmentDate { get; set; }
+        public string Status { get; set; }
     }
 }
